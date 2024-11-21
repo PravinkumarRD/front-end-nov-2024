@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SVG Gradient Ellipse</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>HTML 5 SVG Gradient Ellipse Example</h2>
+    <svg id="svgGradientFlag" height="200" width="500">
+        <defs>
+            <linearGradient id="gradientFlag" cx="50%" cy="50%" r="50%"
+                            fx="50%" fy="50%">
+                <stop offset="0%" style="stop-color:rgb(255, 106, 0);
+      stop-opacity:1" />
+                <stop offset="50%" style="stop-color:rgb(255, 255, 255);
+      stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(29, 168, 8);
+      stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="50" rx="100" ry="50"
+                 style="fill: url(#gradientFlag)" />
+    </svg>
+</body>
+</html>

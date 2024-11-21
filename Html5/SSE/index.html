@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Example</title>
+</head>
+
+<body>
+    <h1>Server-Sent Events Example</h1>
+    <div id="result"></div>
+    <script>
+        const eventSource = new EventSource('http://localhost:3003/events');
+        
+        eventSource.onmessage = function (event) {
+            document.getElementById('result').innerText = 'Time: ' + event.data;
+        };
+    </script>
+</body>
+
+</html>

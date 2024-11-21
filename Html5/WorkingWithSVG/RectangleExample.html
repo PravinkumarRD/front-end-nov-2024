@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SVG Rectangle</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h2>HTML 5 SVG Rectangle Example</h2>
+    <svg id="svgRectangle" height="200" width="500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+        
+        <rect id="redrect" width="100" height="100" fill="green">
+            <animateTransform attributeName="transform"
+                              begin="0s"
+                              dur="10s"
+                              attributeType="XML"
+                              type="skewX"
+                              from="0 60 60"
+                              to="360 60 60"
+                              repeatCount="indefinite" />
+        </rect>
+    </svg>
+    <svg
+  width="120"
+  height="120"
+  viewBox="0 0 120 120"
+  xmlns="http://www.w3.org/2000/svg">
+  <polygon points="60,30 90,90 30,90">
+    <animateTransform
+      attributeName="transform"
+      attributeType="XML"
+      type="skewX"
+      from="0 60 70"
+      to="360 60 70"
+      dur="10s"
+      repeatCount="indefinite" />
+  </polygon>
+</svg>
+</body>
+</html>

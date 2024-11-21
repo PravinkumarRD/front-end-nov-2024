@@ -1,0 +1,39 @@
+// Define primary and secondary colors
+$primary-color: #9926f0;
+$secondary-color: #BB6EF5;
+$pink: #d122e3;
+
+// Applying the colors and gradients
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+.primary-button {
+    background: linear-gradient(to right, rgba($primary-color, 0.95), rgba($secondary-color, 0.95));
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: linear-gradient(to right, rgba($secondary-color, 0.95), rgba($primary-color, 0.95));
+  }
+}
+
+.secondary-button {
+  background: linear-gradient(to right, rgba($secondary-color, 0.95), rgba($primary-color, 0.95));
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: linear-gradient(to right, rgba($primary-color, 0.95), rgba($secondary-color, 0.95));
+  }
+}

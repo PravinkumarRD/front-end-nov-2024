@@ -1,0 +1,31 @@
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+.primary-button {
+  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(187, 110, 245, 0.95));
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.primary-button:hover {
+  background: linear-gradient(to right, rgba(187, 110, 245, 0.95), rgba(153, 38, 240, 0.95));
+}
+
+.secondary-button {
+  background: linear-gradient(to right, rgba(187, 110, 245, 0.95), rgba(153, 38, 240, 0.95));
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.secondary-button:hover {
+  background: linear-gradient(to right, rgba(153, 38, 240, 0.95), rgba(187, 110, 245, 0.95));
+}/*# sourceMappingURL=variables.css.map */

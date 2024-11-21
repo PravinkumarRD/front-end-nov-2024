@@ -1,0 +1,18 @@
+// Import variables
+@import 'variables';
+
+// Import reset styles
+@import './scss/base/reset';
+
+// Global styles (optional)
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: $padding;
+}
+
+// Import components
+@import './scss/components/menu';
+@import './scss/components/introduction';

@@ -1,0 +1,29 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="/src/favicon.png">
+    <meta charset="utf-8" />
+    <title>Media: Native Support</title>
+</head>
+<body>
+    <article>
+        <h1>Media<span> - native support</span></h1>
+    </article>
+
+    <div id="result-stub" class="well hidden">
+        <h4>Video</h4>
+        <video controls loop preload="auto" poster="Images/bbb.png" width="320">
+            <source src="Media/big_buck_bunny.mp4" /><!-- Serve first for iPad -->
+            <source src="Media/big_buck_bunny.ogv" />
+            <source src="Media/big_buck_bunny.webm" />
+        </video>
+
+        <hr />
+
+        <h4>Audio</h4>
+        <audio controls="controls">
+            <source src="Media/move-it.mp3" />
+        </audio>
+    </div>
+</body>
+</html>

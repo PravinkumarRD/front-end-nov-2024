@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Use Modernizr For Testing Support of HTML - 5 Example</title>
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/modernizr-2.8.3.js"></script>
+</head>
+<body>
+        <article>
+            <h1>Detecting HTML5 Features with Modernizr</h1>
+        </article>
+        <div id="result-stub">
+            <span id="msg"></span>
+        </div>
+        <script>
+            //$(function(){
+                if (Modernizr.canvas) {
+                    //$('#msg').text('The canvas API is supported in this browser.');
+                    document.getElementById('msg').innerHTML = "The canvas API is supported in this browser.";
+                }
+                else {
+                    document.getElementById('msg').innerHTML = "The canvas API is NOT supported in this browser.";
+                }
+            //});
+        </script>
+</body>
+</html>

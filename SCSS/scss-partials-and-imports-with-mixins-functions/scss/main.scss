@@ -1,0 +1,22 @@
+// Import variables
+@import 'variables';
+
+// Import functions and mixins
+@import 'functions';
+@import 'mixins';
+
+// Import reset styles
+@import 'base/reset';
+
+// Import components
+@import 'components/menu';
+@import 'components/introduction';
+
+// Global styles (optional)
+body {
+  font-family: Arial, sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  margin: 0;
+  padding: $padding;
+}

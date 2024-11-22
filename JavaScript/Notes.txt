@@ -1,0 +1,6 @@
+What is JavaScript?
+1) It's a dynamic language
+
+In JavaScript, functions written using function keyword, has implicit binding with this keyword. Hence, the this keyword will get executed under the owner of the function
+
+In ES6, Arrow functions does not have implicit binding with this keyword and hence they do get executed under the same context of an object where they are defined

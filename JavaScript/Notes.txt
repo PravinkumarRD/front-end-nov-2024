@@ -4,3 +4,169 @@ What is JavaScript?
 In JavaScript, functions written using function keyword, has implicit binding with this keyword. Hence, the this keyword will get executed under the owner of the function
 
 In ES6, Arrow functions does not have implicit binding with this keyword and hence they do get executed under the same context of an object where they are defined
+
+Type Extension Methods
+
+	Number
+	String
+	Array
+	Object
+
+S.O.L.I.D.
+
+
+Object Oriented Programming - 
+
+	1) Abstraction - Gather the essential characteristics of an object
+	2) Encapsulation - Hiding the implementation details
+			Class
+				[Private, Protected, Public]
+				#_fiend [Any thing declared with # is private. Anything without # is public]
+			Different Types of class
+				Abstract Class, Concrete Class, Final/Sealed Class, Static Class
+		
+	3) Inheritance [Reusability]
+		Generalization-To-Specialization
+		Relationship - Is-A/Has-A
+		Types - Single, Multiple, Multilevel, Hierarchy, Hybrid 
+		Association - Uses-A Relationship
+	Association is a Uses-A relationship where a class uses another class to perform some operation. Once class provides services to another class
+	For Example - Employee class and EmployeeRepository class
+
+		insertEmployee(Employee obj)
+
+Composition - Has-A Relationship
+	One class HAS-A reference to another class as an instance property. In this, child class cannot exist without parent class. Deleting parent class also deletes the child class.
+	For Example - Employee HAS-An Address [Address class can not exist if Employee class is not there]
+
+Aggregation - Another category of HAS-A Relationship
+	One class HAS-A reference to another class as an instance property. However, both classes can exist independently.
+	For Example - Employee HAS-A Department [Here, department can exist independently]
+
+
+	4) Polymorphism
+		Overloading/Compile time/Early Binding/ Static
+		Overriding/Runtime/Late Binding/Dynamic
+
+How do you use class?
+1) Create an new instance
+	class Customer{
+		private num1;
+		public num2;
+		protected num3;
+	}
+	
+	Customer c1=new Customer();
+
+	c1.num2
+	c1.num3
+	
+2) Extending the class
+	class PrimeCustomer extends Customer{
+		super.num2, num3
+	}
+
+SOA - Service Oriented Architecture [Web Services]
+
+interface IHomeLoan{
+	homeLoad();
+}
+
+class BajajServices implements IHomeLoan{
+	homeLoad(){
+		.....
+	}
+	carLoan(){...}
+	personalLoan(){...}
+}
+
+
+
+BajajService pu=new BajajService();
+pu.
+IHomeLoan ar=new BajajService();
+ar.personalLoad()
+ka=new BajajService();
+
+//Initialization
+class Parent{
+	constructor(){
+		//Parent
+	}
+}
+
+class Child extends Parent{
+	constructor(){
+		//Child
+	}
+}
+
+class GrandChild extends Child{
+	constructor(){
+		//GrandChild
+	}
+}
+
+new Grandchild();
+
+Purchase Order System
+
+	Customer, Employee, Supplier, Shipper, Category, Product, Order, OrderDetails, Invoice
+
+Template Classes/Generics
+
+ICommonRepository<T>{
+	getAll():T[];
+	getDetails(id:number):T;
+	insert(item:T):void;
+	update(id:number,item:T):void;
+	delete((id:number):void;
+}
+
+
+class CommonRepository<T> implements ICommonRepository<T>{
+	getAll():T[]{
+
+	}
+	getDetails(id:number):T;
+	insert(item:T):void;
+	update(id:number,item:T):void;
+	delete((id:number):void;
+
+}
+ICommonRepository<Customer> customerRepo=new CommonRepository<Customer>();
+
+customerRepo.getAll()
+
+
+ICommonRepository<Employee> employeeRepo=new CommonRepository<Employee>();
+
+employeeRepo.getAll()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

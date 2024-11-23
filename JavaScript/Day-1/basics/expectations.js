@@ -93,7 +93,7 @@ console.log(addition());
 console.log(addition(100));
 console.log(addition(100, 200));
 console.log(addition(100, 200, 300));
-  */
+  
 
 var Employee = {
   employeeId: 3489,
@@ -121,3 +121,9 @@ var Employee = {
 };
 
 Employee.printEmployeeInfo();
+*/
+
+var mobiles = ["Samsung", "Apple", "Nokia", "MotoG", "Oppo"];
+var m1 = mobiles[0];
+var m2 = mobiles[1];
+var m3 = mobiles[2];

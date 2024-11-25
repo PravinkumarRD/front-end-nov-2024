@@ -144,12 +144,37 @@ ICommonRepository<Employee> employeeRepo=new CommonRepository<Employee>();
 employeeRepo.getAll()
 
 
+ECMAScript Module - 
+
+	Uses import and export keywords
+		Why Modules?
+			1) Modules have their own scope and they do not pollute the global scope
+			2) Modules are loaded exactly once
+			3) Modules can be loaded in a eager or lazy way
+			4) Reusability
+
+		1) Module Resolution
+		2) Module Loading
+		3) Module Execution
 
 
+JavaScript Bundling System
 
+	1) Webpack
+	2) Rollup
+	...
+	
+Export in ESM - There are two types
+	1) Default Export
+		You can have only one default export per module and benefit of using the default export is interoperability with other module systems
+		While importing default exported value, you do not use {} brackets
+		
+	2) Named Export
+		You can have as many named exports as you want in a module
+		All named exports you can access in { } brackets while importing the module
 
-
-
+	Example - import React, {useState, useEffect} from 'react';
+		React is default export and useState, useEffect are named exports
 
 
 

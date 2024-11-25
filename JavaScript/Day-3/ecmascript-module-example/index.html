@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESM Example!</title>
+    <script type="module" src="main.mjs"></script>
+</head>
+<body>
+    <button id="salaryWithoutPaidLeave">Print Salary Slip for Unpaid Leaves!</button>
+    <script>
+        document.querySelector("#salaryWithoutPaidLeave").addEventListener('click',function(){
+            import('./app/salary-slip.mjs');
+        });
+    </script>
+</body>
+</html>

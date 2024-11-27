@@ -1,0 +1,15 @@
+What is Typescript? [Microsoft]
+	1) It is a Superset of JavaScript
+	2) It is a strongly Typed Language
+	3) It supports compile time error checking
+	4) It offers a separate compiler which transpiles your code 
+	5) Typescript is a development language
+	6) It offers new types
+	7) Features not supported by ECMA are supported by Typescript
+
+	Compiler Name - TSC.exe = Transform + Compile
+		Typescript => TSC.exe => ECMAScript/JavaScript
+		Compiler is fully customizable
+	
+	How do you get Typescript?
+		npm install -g typescript

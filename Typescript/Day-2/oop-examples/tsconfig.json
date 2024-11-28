@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "outDir": "src",
+        "target": "ES2023",
+        "noEmitOnError": true,
+        "sourceMap": true,
+        "strictPropertyInitialization": false
+    }
+}

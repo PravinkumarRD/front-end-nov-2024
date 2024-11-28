@@ -13,3 +13,54 @@ What is Typescript? [Microsoft]
 	
 	How do you get Typescript?
 		npm install -g typescript
+
+OOP - 
+	1) Abstraction
+	2) Encapsulation - 
+		Class [Data Members/Behaviour/Actions]
+			Hiding [private/public/protected]
+		Class Types - Abstract Class/Concrete class
+		Interface Support
+	3) Inheritance - Reusability [Multiple is not supported - classes]
+	4) Polymorphism
+	Typescript supports Generic/Template Classes/Interfaces/Methods/...
+
+Meta Programing
+
+app-component.html
+
+app-component.ts
+
+@Component({
+	templateUrl;'file-path'
+})
+class AppComponent{
+	firstName="Pravin";
+	lastName="R. D.";
+}
+
+
+class Sales{
+
+	@gst(18)
+	salesNetProfit(cogs,expense,actualSales){
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

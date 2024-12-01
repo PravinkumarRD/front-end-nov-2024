@@ -1,0 +1,194 @@
+Why Angular?
+
+1) One framework for developing web/desktop/mobile web/mobile applications
+2) Angular framework provides speed and performance
+3) Angular is a modular framework
+4) Developing application in a modular
+5) You can load these modules in a eager way and lazy way
+6) You can develop SPA - Single Page Application
+7) For SPA, Angular offers a library called @angular/router
+8) Component based development [Display] [Angular offers number of components out-of-the-box]
+9) Angular provides number of directives [You can also develop custom directives]
+10) Data Transformation - Pipes [Angular provides number of pipes out-of-the-box]
+11) Angular provides IoC [Injector] and D.I. [Constructor DI..]out-of-the-box
+12) Angular offers service based implementation [For data and logic sharing]
+13) Angular offers Http support out-of-the-box [GET/POST/PUT/DELETE]
+14) RxJS [Reactive Extensions for JavaScript] Library [Observable]
+15) Rich Data Binding Support
+	[Source-To-Destination/Destination-To-Source/Two-Way]
+16) CDC - Change Detection Cycle
+17) Zone.js
+18) Angular uses Ivy as a rendering engine
+19) Angular offers number of component along with CDK using Material Library 
+20) You can create/develop your own Angular library
+21) Angular Elements [You can use Angular Elements in Non-Angular applications]
+22) Angular Forms
+	I) Template Driven Forms
+	II) Reactive Forms
+23) Angular offers CLI [Command Line Interface] tool
+	@angular/cli [Install this CLI tool globally on your machine]
+24) Angular offers rich testing environment and configuration out-of-the-box
+	It has integration with Jasmine JavaScript framework
+25) Angular offers Karma test runner
+26) Angular offers PWA development
+27) Angular offers SSR [Server Side Rendering] [SEOs]
+28) Angular application can also run in background
+29) Angular offers multiple development languages support
+	[Typescript/Dart/JavaScript]
+30) Two Compilation Models - 
+	I) JIT Compilation
+	II) AoT - Ahead Of Time Compilation
+31) Rich animation support [@angular/animations]
+32) Standalone Components/Directives/Pipes [Default in Angular 19]
+33) Signals [For Zoneless CDC]
+
+
+Angular framework's Building Blocks
+
+All Angular Building blocks are classes
+
+1) NgModule - Angular Module [we are now following Module less/no module Application development]
+2) Component
+3) Service
+4) Directive
+5) Pipe
+
+Angular provides number of metadata and all these metadata comes from @angular/core. It tells Angular framework how to process a particular class
+
+
+@NgModule({
+	imports:[Day2Module],//You register other modules as dependencies [From Angular/Custom Modules]
+	exports:[],//Components, Pipes and Directives
+	declarations:[AppComponent],//Components, Pipes and Directives
+	providers:[MyService], //Services
+	bootstrap:[AppComponent]
+})
+class AppModule{
+
+}
+
+@Component({
+
+})
+class AppComponent{
+
+}
+
+@Directive({
+
+})
+class HighLighterDirective{
+
+}
+
+@Pipe({
+
+})
+class MultiLingualDatePipe{
+
+}
+
+@Injectable({
+
+})
+class MyService{
+
+}
+
+
+Creating First Angular Application - 
+
+1) Install Angular CLI tool globally on your machine
+	npm install -g @angular/cli
+
+2) To test the CLI installation use below command
+	ng version
+3) To create new Angular application - 
+
+	ng new app-name --standalone=false
+4) CD to your application folder and run your application
+
+	ng serve [This will run your application in Dev mode]
+	ng test  [this will run your unit test cases]
+	ng build [This will create production build of your application]
+
+
+Requirements - 
+
+	1) 
+
+
+Introduction to Component - 
+
+	1) Component class - Contains data and logic
+	2) Component template - contains the display along with styling
+		Template types - 
+			1) Inline Template - [2-3 line code] - template:''/""/``
+				a) Single/Double Quote syntax - One line code [''/""]
+				b) Backtick syntax - ``
+			2) Linked/External Template - templateUrl:'relative-path-of-html-file'
+				.html fileand link it with component class
+	3) Component Metadata tells Angular how to process a class which contains @Component()
+
+
+
+Angular offers number of directives out-of-the-box and every Angular directive starts with &ng
+
+	1) *ngIf/else
+	2) *ngFor - For-of loop
+
+
+Events - [Event Code, Event Name, Fees and start date]
+
+Copy statics folder from previous application
+
+Module Based Application commands - 
+
+ng g m employees
+
+ng g c employees/components/employees-list
+ng g c employees/components/employee-details
+
+ng g i employees/models/employee
+
+Export EmployeesListComponent from employees module. 
+
+@NgModule({
+  declarations: [
+    EmployeesListComponent,
+    EmployeeDetailsComponent
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports:[
+    EmployeesListComponent
+  ]
+})
+export class EmployeesModule { }
+
+Repeat the same for events feature folder
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

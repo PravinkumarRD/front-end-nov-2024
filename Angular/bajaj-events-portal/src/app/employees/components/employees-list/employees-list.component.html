@@ -1,0 +1,66 @@
+<div *ngIf="employees.length>0;else noDataTemplate">
+    <h1>{{pageTitle}}</h1>
+    <hr>
+    <h6>{{pageSubTitle}}</h6>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr *ngIf="columns.length>0">
+                <th *ngFor="let colName of columns">{{colName}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td><span [innerText]="employee.employeeName"></span></td>
+                <td><span [innerText]="employee.city"></span></td>
+                <td><span [innerText]="employee.email"></span></td>
+                <td><span [innerText]="employee.phone"></span></td>
+                <td>
+                    <button class="btn btn-info" (click)="onEmployeeSelection(employee)">Show Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <div *ngIf="selectedEmployee">
+        <app-employee-details [employee]="selectedEmployee"></app-employee-details>
+    </div>
+</div>
+
+<ng-template #noDataTemplate>
+    <div class="container">
+        <h3>Sorry! We did not find any employees record!</h3>
+    </div>
+</ng-template>
+
+<!-- @if (employees.length>0) {
+<div>
+    <h1>{{pageTitle}}</h1>
+    <hr>
+    <h6>{{pageSubTitle}}</h6>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                @if (columns.length>0) {
+                @for (colName of columns; track $index) {
+                <th>{{colName}}</th>
+                }
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @for (employee of employees; track $index) {
+            <tr>
+                <td><span [innerText]="employee.employeeName"></span></td>
+                <td><span [innerText]="employee.city"></span></td>
+                <td><span [innerText]="employee.email"></span></td>
+                <td><span [innerText]="employee.phone"></span></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+}@else {
+    <div class="container">
+        <h3>Sorry! We did not find any employees record!</h3>
+    </div>
+} -->

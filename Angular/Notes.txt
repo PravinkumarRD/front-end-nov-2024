@@ -1,0 +1,655 @@
+Why Angular?
+
+1) One framework for developing web/desktop/mobile web/mobile applications
+2) Angular framework provides speed and performance
+3) Angular is a modular framework
+4) Developing application in a modular
+5) You can load these modules in a eager way and lazy way
+6) You can develop SPA - Single Page Application
+7) For SPA, Angular offers a library called @angular/router
+8) Component based development [Display] [Angular offers number of components out-of-the-box]
+9) Angular provides number of directives [You can also develop custom directives]
+10) Data Transformation - Pipes [Angular provides number of pipes out-of-the-box]
+11) Angular provides IoC [Injector] and D.I. [Constructor DI..]out-of-the-box
+12) Angular offers service based implementation [For data and logic sharing]
+13) Angular offers Http support out-of-the-box [GET/POST/PUT/DELETE]
+14) RxJS [Reactive Extensions for JavaScript] Library [Observable]
+15) Rich Data Binding Support
+	[Source-To-Destination/Destination-To-Source/Two-Way]
+16) CDC - Change Detection Cycle
+17) Zone.js
+18) Angular uses Ivy as a rendering engine
+19) Angular offers number of component along with CDK using Material Library 
+20) You can create/develop your own Angular library
+21) Angular Elements [You can use Angular Elements in Non-Angular applications]
+22) Angular Forms
+	I) Template Driven Forms
+	II) Reactive Forms
+23) Angular offers CLI [Command Line Interface] tool
+	@angular/cli [Install this CLI tool globally on your machine]
+24) Angular offers rich testing environment and configuration out-of-the-box
+	It has integration with Jasmine JavaScript framework
+25) Angular offers Karma test runner
+26) Angular offers PWA development
+27) Angular offers SSR [Server Side Rendering] [SEOs]
+28) Angular application can also run in background
+29) Angular offers multiple development languages support
+	[Typescript/Dart/JavaScript]
+30) Two Compilation Models - 
+	I) JIT Compilation
+	II) AoT - Ahead Of Time Compilation
+31) Rich animation support [@angular/animations]
+32) Standalone Components/Directives/Pipes [Default in Angular 19]
+33) Signals [For Zoneless CDC]
+
+
+Angular framework's Building Blocks
+
+All Angular Building blocks are classes
+
+1) NgModule - Angular Module [we are now following Module less/no module Application development]
+2) Component
+3) Service
+4) Directive
+5) Pipe
+
+Angular provides number of metadata and all these metadata comes from @angular/core. It tells Angular framework how to process a particular class
+
+
+@NgModule({
+	imports:[Day2Module],//You register other modules as dependencies [From Angular/Custom Modules]
+	exports:[],//Components, Pipes and Directives
+	declarations:[AppComponent],//Components, Pipes and Directives
+	providers:[MyService], //Services
+	bootstrap:[AppComponent]
+})
+class AppModule{
+
+}
+
+@Component({
+
+})
+class AppComponent{
+
+}
+
+@Directive({
+
+})
+class HighLighterDirective{
+
+}
+
+@Pipe({
+
+})
+class MultiLingualDatePipe{
+
+}
+
+@Injectable({
+
+})
+class MyService{
+
+}
+
+
+Creating First Angular Application - 
+
+1) Install Angular CLI tool globally on your machine
+	npm install -g @angular/cli
+
+2) To test the CLI installation use below command
+	ng version
+3) To create new Angular application - 
+
+	ng new app-name --standalone=false
+4) CD to your application folder and run your application
+
+	ng serve [This will run your application in Dev mode]
+	ng test  [this will run your unit test cases]
+	ng build [This will create production build of your application]
+
+
+Requirements - 
+
+	1) 
+
+
+Introduction to Component - 
+
+	1) Component class - Contains data and logic
+	2) Component template - contains the display along with styling
+		Template types - 
+			1) Inline Template - [2-3 line code] - template:''/""/``
+				a) Single/Double Quote syntax - One line code [''/""]
+				b) Backtick syntax - ``
+			2) Linked/External Template - templateUrl:'relative-path-of-html-file'
+				.html fileand link it with component class
+	3) Component Metadata tells Angular how to process a class which contains @Component()
+
+
+
+Angular offers number of directives out-of-the-box and every Angular directive starts with &ng
+
+	1) *ngIf/else
+	2) *ngFor - For-of loop
+
+
+Events - [Event Code, Event Name, Fees and start date]
+
+Copy statics folder from previous application
+
+Module Based Application commands - 
+
+ng g m employees
+
+ng g c employees/components/employees-list
+ng g c employees/components/employee-details
+
+ng g i employees/models/employee
+
+Export EmployeesListComponent from employees module. 
+
+@NgModule({
+  declarations: [
+    EmployeesListComponent,
+    EmployeeDetailsComponent
+  ],
+  imports: [
+    CommonModule
+  ],
+  exports:[
+    EmployeesListComponent
+  ]
+})
+export class EmployeesModule { }
+
+Repeat the same for events feature folder
+
+
+
+
+Data Transformation - Pipes
+
+Angular framework provides number of pipes out-of-the-box
+
+currency, date, titlecase, uppercase, lowercase, ...
+
+property | pipeName
+property | pipeName1 | pipeName2 | pipeName3 [Pipes work in sequence]
+
+property | pipeName:'arg1':'arg2'
+
+Angular framework also allows us to develop custom pipes
+
+
+import { Pipe, PipeTransfrom } from '@angular/core';
+
+
+@Pipe({
+	name:'capitalCamelCasing'
+})
+class CapitalCamelCasingPipe implements PipeTransform{
+
+	transform(value:unknown, ...args:unknown[]) unknown{
+		let args[0] ....
+		logic
+	}
+
+}
+
+
+
+ng g m shared
+
+ng g p shared/pipes/multi-lingual-date
+
+ startDate|multiLingualDate
+ startDate|multiLingualDate:'hi-IN'
+
+
+For two-way data binding, we need ngMode directive which comes from a library/package
+
+	@angular/forms
+		FormsModule
+			ngModel
+
+
+
+ng new bajaj-fix-deposit --standalone=false
+bajaj-irctc
+
+
+constants
+
+
+
+
+
+
+Custom Services in Angular
+Why Services?
+
+1) Reusability of Data and Logic
+2) Singleton instance at various levels
+3) Easy testing
+4) IoC - Inversion Of Control Container [Injector] and D.I. [Dependency Injection]
+5) You can define the scope of service instance at 4 levels - 
+	1) Component Level
+	2) Module Level
+	3) Application Level
+	4) Platform/Multiple Angular applications loaded in a single page [index.html]
+
+
+1) Option to use service [Not Recommended]
+eventService:EventsService = new EventsService();
+
+2) Dependency Injection [Recommended Way of using Services]
+
+	constructor(private eventsService:EventsService){
+
+	}
+
+import {Injectable} from '@angular/core';
+
+
+@Injectable({
+
+	providedIn:'platform/root/any'
+
+})
+@Injectable() //Register your service at module level/component level
+export class AuthService{
+
+}
+
+At module level, use @NgModule({
+	providers:[AuthService]
+})
+
+
+@Component({
+	selector:'',
+	templateUrl:'',
+	styleUrl:'',
+	providers:[AuthService]
+})
+
+What is Component Lifecycle?
+
+Component Lifecycle Hooks
+
+	Hooks will execute in sequence
+		1) Few hooks will execute exactly once [Will have suffix Init]
+		2) Few hooks will execute multiple times
+Angular offers all these hooks as interfaces from @angular/core library/package
+
+
+Http Support in Angular framework
+	GET/POST/PUT/DELETE
+
+@angular/common/http [Package]
+	HttpClientModule
+		HttpClient [Service]
+
+			get()/get<T>(url,{format-request-object}):Observable<T>
+			post()/post<T>(url, data, configuration):Observable<T>
+			put()/put<T>(url, data, configuration):Observable<T>
+			delete()/delete<T>(url, data, configuration):Observable<T>
+
+RxJS - Reactive Extensions for JavaScript [Library]
+	Observable - Core object of RxJS
+
+
+JSON Server - 
+	Add property in db.json file with the data and restart the server
+	Once restarted, test the endpoints/URLs
+
+Angular Application - 
+	1) Add service in your feature folder under services folder
+		ng g s shared/services/your-service-name
+
+		Keep the scope of service at root level [default]
+	2) Register HttpClientModule at root module under imports:[] [app.module.ts]
+		With this step, we are now eligible to use HttpClient service via dependency injection anywhere in our application
+	3) Using HttpClient service in Service class - 
+		i) Import HttpClient service class from @angular/common/http
+		ii) Import Observable from rxjs library
+		iii) Inject HttpClient service via constructor using constructor property syntax
+			constructor(private _httpClient:HttpClient){
+
+			}
+		iv) Write service methods to perform GET/POST/PUT/DELETE requests in which the return type of the method would be Observable<T>
+
+			for Example - 
+				return this._httpClient.get<T>('URL');
+
+	4) Now its time to consume the service methods output
+		i) In a component/service, import the service which you want use and inject it via constructor injection
+			constructor(private _yourService:YourService){
+
+			}
+		ii) Call service method which in your component class method. If service returns an observable, subscribe to an observable to get the notification like next, error and complete
+
+				this.serviceSubscribtion = this._yourService.method().subscribe({
+					next:data=>{logic to manipulate the data},
+					error:err=>{handling of an error}
+				});
+		iv) Implement onDestroy hook in your component class to unsubscribe an observable
+
+			ngOnDestroy(){
+				if(this.serviceSubscription)
+					this.serviceSubscription.unsubscribe();
+			}
+
+Developing Single Page Application [SPA]
+
+Introduction to @angular/router library/package
+
+		RouterModule - It provides number of directives and a component
+
+		1) You can declare routes
+			http://localhost:4200 [Default Route] [DefaultComponent]
+			http://localhost:4200/home [Specific/Named Route] [HomeComponent]
+			http://localhost:4200/employees [Specific/Named Route] [EmployeesListComponent]
+			http://localhost:4200/employees/profile [Specific/Named Route] [EmployeeProfileComponent]
+			http://localhost:4200/employees/237923 [Parameterized Route] [EmployeeDetailsComponent]
+			http://localhost:4200/events [EventsListComponent]
+			http://localhost:4200/events/new [RegisterNewEventComponent]
+			http://localhost:4200/events/3472 [EventDetailsComponent]
+
+			http://localhost:4200/login?returnUrl=/events [LoginComponent]
+			http://localhost:4200/signup [SignupComponent]
+
+		
+			
+		2) You need to use a component [<router-outlet></router-outlet>]
+		3) Declarative Routes accessibility [Directives]
+			routerLink and routerLinkActive
+		4) Programmatic Routing API/Services
+		5) Route Protection - Route Guards
+		6) Routing Services [D.I.] to read parameter/query string values
+
+For lazy loading of the modules, we will implement feature wise routes
+	i) Register these routes with their own feature module
+	ii) using import() function, load the feature module in a lazy way
+
+
+	Application Structure - 
+
+		App
+			app-routing.module.ts [Parent Routes]
+			app.module.ts
+			app.component.[ts/spec.ts/html/scss]
+			events
+				events-routing.module.ts [Children]
+				events.module.ts
+				components
+					....
+				models
+					....
+				services
+					....
+				pipes
+					....
+				directives
+					....
+			employees
+				employees-routing.module.ts [Children]
+				employees.module.ts
+				components
+					....
+				models
+					....
+				services
+					....
+				pipes
+					....
+				directives
+					....
+			navigation
+				navigation.module.ts
+				components
+					nav-bar
+						nav-bar.component.[ts/spec.ts/html/scss]
+					footer
+						footer.component.[ts/spec.ts/html/scss]
+			home
+				home.module.ts
+				components
+					home
+						home.component.[ts/spec.ts/html/scss]
+			shared
+				shared.module.ts
+				pipes
+				components
+					not-found
+						not-found.component.[ts/spec.ts/html/scss]
+					unauthorized
+						unauthorized.component.[ts/spec.ts/html/scss]
+					forbidden 
+						forbidden.component.[ts/spec.ts/html/scss]
+			security
+				security.module.ts
+				components
+					login
+						login.component.[ts/spec.ts/html/scss]
+				services
+					security.service.ts
+
+					
+				
+
+What is authentication?
+	Checking the credentials of the user
+What is authorization?
+	Granting or revoking the permissions from the user/role
+
+
+Angular Forms - 
+
+	1) Template Driven Forms
+		Angular has control over the form elements
+
+
+Introduction to MongoDB Server - 
+
+RDBMS							NoSQL
+Oracle/Microsoft SQL Server/MySQL Serve				MongoDB Server
+	Databases							Databases
+		Table								Collection
+			Cols/Rows							Documents
+
+What is document?
+	Document is a JSON like object
+
+{
+	key:value,
+	key:value,
+	Key:{
+		key:[1,2,3,4],
+		key:{
+			key:value
+		}
+	}
+}
+		
+Write queries in MongoDB - We will use Mongo Shell - Terminal utility
+MongoDB offers number of functions to write queries. All function follows camelCasing
+
+1) Show existing databases
+	show dbs;
+2) Create new database
+	use synechron-events-db-jul-24;
+3) Create new collection
+	db.createCollection("events");
+	db.createCollection("employees");
+	db.createCollection("users");
+4) List all the collections from the connected database
+	show collections;
+5) Insert document(s) - Single document/Bulk Insertion
+	db.users.insertOne({email:"alisha.c@synechron.com",password:"Welcome@123",role:"Hr"});
+	db.users.insertOne({email:"manish.kaushik@synechron.com",password:"Welcome@123",role:"Employee"});
+
+	db.events.insertMany([
+    {
+      eventId: 1001,
+      eventCode: 'SEMJQ3',
+      eventName: 'Seminar on jQuery 3.x',
+      description: 'Seminar will discuss all the new features of jQuery 3.x',
+      startDate: new Date(),
+      endDate: new Date(),
+      fees: 800,
+      seatsFilled: 70,
+      logo: 'images/jq3.png'
+    },
+    {
+      eventId: 1002,
+      eventCode: 'SEMNG1',
+      eventName: 'Seminar on Angular JS 1.5.x',
+      description: 'Seminar will discuss all the new features of Angular JS 1.5.x',
+      startDate: new Date(),
+      endDate: new Date(),
+      fees: 600,
+      seatsFilled: 50,
+      logo: 'images/ng1.png'
+    },
+    {
+      eventId: 1003,
+      eventCode: 'SEMNG2',
+      eventName: 'Seminar on Angular 2.x',
+      description: 'Seminar will discuss all the new features of Angular 2.x',
+      startDate: new Date(),
+      endDate: new Date(),
+      fees: 1000,
+      seatsFilled: 80,
+      logo: 'images/ng2.png'
+    },
+    {
+      eventId: 1004,
+      eventCode: 'SEMNG4',
+      eventName: 'Seminar on Angular 4.x',
+      description: 'Seminar will discuss all the new features of Angular 4.x',
+      startDate: new Date(),
+      endDate: new Date(),
+      fees: 1000,
+      seatsFilled: 76,
+      logo: 'images/ng2.png'
+    },
+    {
+      eventId: 1005,
+      eventCode: 'SEMBS3',
+      eventName: 'Seminar on Bootstrap 3.x',
+      description: 'Seminar will discuss all the new features of Bootstrap 3.x',
+      startDate: new Date(),
+      endDate: new Date(),
+      fees: 500,
+      seatsFilled: 34,
+      logo: 'images/bs3.png'
+    }
+  ]);
+
+6) Fetch all documents with and without conditions
+	db.events.find(); //This will return you an array
+	db.users.find();
+	
+	db.users.find({email:'alisha.c@synechron.com'});
+
+	db.users.findOne(); //This will return you an object
+	db.users.findOne({email:'alisha.c@synechron.com'});
+7) Update document
+
+8) Delete document(s)
+	db.users.deleteOne({email:'alisha.c@synechron.com'});
+	db.users.deleteMany({});
+
+
+
+
+class Customer{
+	
+	public int CustomerId {get; set;}
+	[Required("Contact Name is a required Field")]
+	public string ContactName {get; set;}
+	public string Address {get; set;}
+	public string City {get; set;}
+	[Required("Age is a required field")]
+	[Range(18-80)]
+	public string Age {get; set;}
+	[DateValidations]
+	public string DoB {get; set;}
+
+}
+
+
+Angular Reactive Form - 
+	@angular/forms
+		ReactiveFormsModule [Directives and Attributes]
+		
+		FormGroup, FormControl, Validators
+
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+export class User{
+	userForm:FormGroup = new FormGroup({
+		name: new FormControl(state,Validators.required),
+		username: new FormControl(state,Validators.required)
+		email: new FormControl(state,[Validators.required, Validators.pattern('regx')]),
+		address: new FormGroup({
+			city: new FormControl(state,Validators.required),
+			zipcode:new FormControl(state,Validators.required),
+			geo:new FormGroup({
+				lat: new FormControl(state,Validators.required),
+				lng: new FormControl(state,Validators.required),
+			}),
+		}),
+		phone: new FormControl(state,Validators.required),
+
+	});
+
+}
+
+componentClass - 
+
+	user:User =new User();
+
+	onSubmit():void{
+		this.user.userForm.value
+	}
+
+<form [formGroup]="user.userForm" (ngSubmit)="function()" #userForm="ngForm">
+	<input type="text" id="inputName" name="name" formControlName="name">
+	...
+	...
+	<div class="alert alert-danger">
+	<div [formGroup]="user.userForm.address">
+		<input type="text" id="inputCity" name="city" formControlName="city">
+		...
+		...
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
